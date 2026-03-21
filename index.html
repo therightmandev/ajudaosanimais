@@ -51,45 +51,78 @@
 	<div style="margin: 40px 20px;">
 		<p style="margin: 40px 0 40px;">Apoia estas organiza&ccedil;&otilde;es através de doa&ccedil;&otilde;es, voluntariado e partilhas nas redes sociais</p>
 		
-		<div style="padding: 10px; margin-top: 30px;">
-			<h2 class="org-title">Frente Animal</h2>
-			<ul style="list-style: none;">
-				<li><a href="https://www.frenteanimal.com">Website</a></li>
-				<li><a href="https://www.instagram.com/frenteanimalorg/">Instagram</a></li>
-			</ul>
-		</div>
+		<div id="list-of-programatic-organizations"><!-- This will be filled with the orgs --></div>
 
-		<div style="padding: 10px; margin-top: 30px;">
-			<h2 class="org-title">Desafio Vegetariano</h2>
-			<ul style="list-style: none;">
-				<li><a href="https://desafiovegetariano.com">Website</a></li>
-				<li><a href="https://www.instagram.com/desafiovegetarianopt/">Instagram</a></li>
-			</ul>
-		</div>
+		<script>
+			const programaticOrganizations = [
+				{
+					name: "Frente Animal",
+					website: "https://www.frenteanimal.com",
+					instagram: "https://www.instagram.com/frenteanimalorg/"
+				},
+				{
+					name: "Desafio Vegetariano",
+					website: "https://desafiovegetariano.com",
+					instagram: "https://www.instagram.com/desafiovegetarianopt/"
+				},
+				{
+					name: "ProVeg",
+					website: "https://proveg.org/pt/",
+					instagram: "https://www.instagram.com/provegpt/"
+				},
+				{
+					name: "Animal Save & Care",
+					website: "https://www.saveandcare.org",
+					instagram: "https://www.instagram.com/saveandcare.libertacaoanimal"
+				},
+				{
+					name: "SOS Animal",
+					website: "https://www.sosanimal.com",
+					instagram: "https://www.instagram.com/sosanimalportugal"
+				},
+				{
+					name: "Associação Amigos Picudos",
+					website: "https://amigospicudos.webnode.pt",
+					instagram: "https://www.instagram.com/assoc.amigos.picudos/"
+				},
+				{
+					name: "Associação Bichos Exóticos",
+					instagram: "https://www.instagram.com/bichos__exoticos/"
+				},
+			];
 
-		<div style="padding: 10px; margin-top: 30px;">
-			<h2 class="org-title">ProVeg</h2>
-			<ul style="list-style: none;">
-				<li><a href="https://proveg.org/pt/">Website</a></li>
-				<li><a href="https://www.instagram.com/provegpt/">Instagram</a></li>
-			</ul>
-		</div>
-	
-		<div style="padding: 10px; margin-top: 30px;">
-			<h2 class="org-title">Animal Save & Care</h2>
-			<ul style="list-style: none;">
-				<li><a href="https://www.saveandcare.org">Website</a></li>
-				<li><a href="https://www.instagram.com/saveandcare.libertacaoanimal">Instagram</a></li>
-			</ul>
-		</div>
-	
-		<div style="padding: 10px; margin-top: 30px;">
-			<h2 class="org-title">SOS Animal</h2>
-			<ul style="list-style: none;">
-				<li><a href="https://www.sosanimal.com">Website</a></li>
-				<li><a href="https://www.instagram.com/sosanimalportugal">Instagram</a></li>
-			</ul>
-		</div>
+			const listContainer = document.getElementById("list-of-programatic-organizations");
 
+			programaticOrganizations.forEach(org => {
+				const orgDiv = document.createElement("div");
+				orgDiv.style.padding = "10px";
+				orgDiv.style.marginTop = "40px";
+
+				const orgTitle = document.createElement("h2");
+				orgTitle.className = "org-title";
+				orgTitle.textContent = org.name;
+				orgTitle.style.fontSize = "1.5rem";
+				orgDiv.appendChild(orgTitle);
+
+				const orgLinks = document.createElement("ul");
+				orgLinks.style.listStyle = "none";
+				orgLinks.style.fontSize = "1.2rem";
+
+				["instagram", "website"].forEach(key => {
+					if (org[key]) {
+						const linkItem = document.createElement("li");
+						const anchor = document.createElement("a");
+						anchor.href = org[key];
+						anchor.textContent = key.charAt(0).toUpperCase() + key.slice(1);
+						linkItem.appendChild(anchor);
+						orgLinks.appendChild(linkItem);
+					}
+				});
+
+
+				orgDiv.appendChild(orgLinks);
+				listContainer.appendChild(orgDiv);
+			});
+		</script>
 	</div>
 </body>
