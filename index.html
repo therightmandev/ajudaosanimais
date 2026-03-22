@@ -35,7 +35,7 @@
 		}
 
 		a {
-			color: var(--primary-color);
+			color: #4764ba;
 			text-decoration: none;
 		}
 
@@ -48,8 +48,9 @@
 		<h1 style="font-size: 3rem; color: var(--secondary-color);">Ajuda os Animais</h1>
 	</div>
 
-	<div style="margin: 40px 20px;">
-		<p style="margin: 40px 0 40px;">Apoia estas organiza&ccedil;&otilde;es através de doa&ccedil;&otilde;es, voluntariado e partilhas nas redes sociais</p>
+	<div style="margin: 40px 20px; max-width: 500px; margin-left: auto; margin-right: auto">
+		<p style="margin: 40px 0 0; font-size: 1rem;">Apoia estas organiza&ccedil;&otilde;es através de doa&ccedil;&otilde;es, voluntariado e partilhas nas redes sociais</p>
+
 		
 		<div id="list-of-programatic-organizations"><!-- This will be filled with the orgs --></div>
 
@@ -101,12 +102,13 @@
 			programaticOrganizations.forEach(org => {
 				const orgDiv = document.createElement("div");
 				orgDiv.style.padding = "10px";
-				orgDiv.style.marginTop = "40px";
+				orgDiv.style.marginTop = "30px";
+				orgDiv.style.marginBottom = "30px";
 
 				const orgTitle = document.createElement("h2");
 				orgTitle.className = "org-title";
 				orgTitle.textContent = org.name;
-				orgTitle.style.fontSize = "1.5rem";
+				orgTitle.style.fontSize = "1.9rem";
 				orgDiv.appendChild(orgTitle);
 
 				const orgLinks = document.createElement("ul");
@@ -124,10 +126,15 @@
 					}
 				});
 
+				hr = document.createElement("hr");
+				hr.style = "border-width: 0; height:3px; background: #c5d5ea";
 
 				orgDiv.appendChild(orgLinks);
 				listContainer.appendChild(orgDiv);
+				listContainer.appendChild(hr);
 			});
 		</script>
+
+		<p style="margin: 40px 0 40px; font-size: 1rem; color: var(--primary-color);">Atualizado a 22 de Março de 2026</p>
 	</div>
 </body>
