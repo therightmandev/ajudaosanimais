@@ -12,7 +12,7 @@
 	<style>
 		:root {
 			--primary-color: #053685;
-			--secondary-color: #e0ebf6;
+			--secondary-color: #eef2f7;
 		}
 
 		* {
@@ -27,7 +27,7 @@
 		}
 
 		.org-title {
-			font-size: 2rem;
+			font-size: 2.9rem;
 		}
 
 		body {
@@ -45,11 +45,11 @@
 	</style>
 
 	<div style="padding: 0 20px; background: var(--primary-color)">
-		<h1 style="font-size: 3rem; color: var(--secondary-color);">Ajuda os Animais</h1>
+		<h1 style="font-size: 2rem; color: var(--secondary-color);">Ajuda os Animais</h1>
 	</div>
 
 	<div style="margin: 40px 20px; max-width: 500px; margin-left: auto; margin-right: auto">
-		<p style="margin: 40px 0 0; font-size: 1rem;">Apoia estas organiza&ccedil;&otilde;es através de doa&ccedil;&otilde;es, voluntariado e partilhas nas redes sociais</p>
+		<p style="margin: 40px 0 0; font-size: 1rem;">Apoia estas organiza&ccedil;&otilde;es através de doa&ccedil;&otilde;es, voluntariado e partilhas nas redes sociais :)</p>
 
 		
 		<div id="list-of-programatic-organizations"><!-- This will be filled with the orgs --></div>
@@ -108,7 +108,6 @@
 				const orgTitle = document.createElement("h2");
 				orgTitle.className = "org-title";
 				orgTitle.textContent = org.name;
-				orgTitle.style.fontSize = "1.9rem";
 				orgDiv.appendChild(orgTitle);
 
 				const orgLinks = document.createElement("ul");
